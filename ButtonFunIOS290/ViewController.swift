@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var leftSwitch: UISwitch!
     @IBOutlet weak var rightSwitch: UISwitch!
+    @IBOutlet weak var doSomethingButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,21 @@ class ViewController: UIViewController {
         
     }
     @IBAction func toggleControls(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 { //"Switches" is selected
+            leftSwitch.isHidden = false
+            rightSwitch.isHidden = false
+            doSomethingButton.isHidden = true
+        }
+        else{
+            leftSwitch.isHidden = true
+            rightSwitch.isHidden = true
+            doSomethingButton.isHidden = false
+        }
+    }
+    @IBAction func onButtonPressed(_ sender: UIButton) {
+        let controller = UIAlertController(title: "Are You Sure?", message:nil, preferredStyle: .actionSheet)
+        let yesAction = UIAlertAction(title: "Yes, I'm Sure!",style: .destructive, handler: { action in let msg = self.nameField.text!.isEmpty? "You Can breathe easy. everything went OK.":)
+        
     }
 } 
 

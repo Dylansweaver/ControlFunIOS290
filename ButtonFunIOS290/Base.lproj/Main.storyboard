@@ -74,6 +74,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="922-6a-OhP">
                                 <rect key="frame" x="322" y="511" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSwitchChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="GXc-TM-hVK"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9oB-Hr-eDH">
                                 <rect key="frame" x="2" y="511" width="51" height="31"/>
@@ -82,14 +85,18 @@
                                     <action selector="onSwitchChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="5fu-y6-hSj"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aW-Lf-BaQ">
-                                <rect key="frame" x="138" y="512" width="98" height="30"/>
-                                <state key="normal" title="Do Something"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aW-Lf-BaQ">
+                                <rect key="frame" x="127" y="512" width="121" height="46"/>
+                                <state key="normal" title="Do Something" backgroundImage="whiteButton"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LDZ-Sn-yS1"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.76470588235294112" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="5aW-Lf-BaQ" secondAttribute="trailing" constant="111" id="0rz-Ao-0K7"/>
                             <constraint firstItem="2OG-A2-DXY" firstAttribute="leading" secondItem="CAQ-7g-SxQ" secondAttribute="trailing" constant="12" id="1fG-bz-3vr"/>
                             <constraint firstItem="qwn-W6-d9F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="400" id="4lN-Rp-rTa"/>
                             <constraint firstItem="lai-XN-Wbq" firstAttribute="leading" secondItem="CAQ-7g-SxQ" secondAttribute="leading" id="8HF-Mm-bnC"/>
@@ -103,13 +110,12 @@
                             <constraint firstItem="lai-XN-Wbq" firstAttribute="centerY" secondItem="mug-G6-y3K" secondAttribute="centerY" id="Hdp-89-u1m"/>
                             <constraint firstItem="5aW-Lf-BaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="492" id="Loa-0m-wIH"/>
                             <constraint firstItem="mug-G6-y3K" firstAttribute="top" secondItem="FSW-uW-sOh" secondAttribute="bottom" constant="57" id="Pdz-xV-uum"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5aW-Lf-BaQ" secondAttribute="trailing" constant="123" id="Quk-Ae-ytV"/>
                             <constraint firstItem="YX5-Es-iwv" firstAttribute="top" secondItem="2OG-A2-DXY" secondAttribute="bottom" constant="26" id="R5c-Yk-lAn"/>
                             <constraint firstItem="qwn-W6-d9F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T3d-dF-liI"/>
                             <constraint firstItem="CAQ-7g-SxQ" firstAttribute="leading" secondItem="57K-Ha-cqp" secondAttribute="leading" id="Yid-7c-pHj"/>
                             <constraint firstItem="FSW-uW-sOh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="63" id="aw8-12-bKj"/>
                             <constraint firstItem="FSW-uW-sOh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="baD-tp-LnB"/>
-                            <constraint firstItem="5aW-Lf-BaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="122" id="cT6-aO-aGg"/>
+                            <constraint firstItem="5aW-Lf-BaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="111" id="f3N-cU-O4T"/>
                             <constraint firstItem="mug-G6-y3K" firstAttribute="trailing" secondItem="2OG-A2-DXY" secondAttribute="trailing" id="kNH-uc-JOV"/>
                             <constraint firstItem="mug-G6-y3K" firstAttribute="leading" secondItem="2OG-A2-DXY" secondAttribute="leading" id="rdp-Of-RgK"/>
                             <constraint firstItem="lai-XN-Wbq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uRW-fu-ZIU"/>
@@ -120,6 +126,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="doSomethingButton" destination="5aW-Lf-BaQ" id="bKU-Ig-2hL"/>
                         <outlet property="leftSwitch" destination="9oB-Hr-eDH" id="Xus-bx-Uym"/>
                         <outlet property="nameField" destination="mug-G6-y3K" id="vfC-4L-vye"/>
                         <outlet property="numberField" destination="2OG-A2-DXY" id="C9e-7h-L8C"/>
@@ -139,5 +146,6 @@
     </scenes>
     <resources>
         <image name="apress_logo" width="172" height="80"/>
+        <image name="whiteButton" width="29" height="46"/>
     </resources>
 </document>
