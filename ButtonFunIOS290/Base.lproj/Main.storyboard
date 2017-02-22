@@ -86,8 +86,9 @@
                                 </connections>
                             </switch>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aW-Lf-BaQ">
-                                <rect key="frame" x="127" y="512" width="121" height="46"/>
+                                <rect key="frame" x="127" y="512" width="121" height="38"/>
                                 <state key="normal" title="Do Something" backgroundImage="whiteButton"/>
+                                <state key="highlighted" backgroundImage="blueButton"/>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LDZ-Sn-yS1"/>
                                 </connections>
@@ -146,6 +147,7 @@
     </scenes>
     <resources>
         <image name="apress_logo" width="172" height="80"/>
-        <image name="whiteButton" width="29" height="46"/>
+        <image name="blueButton" width="29" height="37"/>
+        <image name="whiteButton" width="29" height="38"/>
     </resources>
 </document>
